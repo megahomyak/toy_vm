@@ -5,7 +5,6 @@
 
 
 static stack_frame_type * _make_new_stack_frame(size_t elements_amount, stack_frame_type *prev_stack_frame) {
-	// Do NOT use this function to make new stack frames! Use "add_new_stack_frame_to_the_vm" function!
 	stack_frame_type *new_stack_frame = (stack_frame_type *) malloc(sizeof (stack_frame_type) + sizeof (stack_element_type) * elements_amount);
 	if (!new_stack_frame) {
 		puts("Not enough place to allocate a stack frame!");
