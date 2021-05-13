@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "registers.c"
-#include "instructions.c"
-#include "stack.c"
+#include "headers/registers.h"
+#include "headers/instructions.h"
+#include "headers/stack.h"
 
 
 #define VM_DEBUG

@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "types/vm.c"
+#include "../headers/stack.h"
 
 
-static stack_frame_type * _make_new_stack_frame(size_t elements_amount, stack_frame_type *prev_stack_frame) {
+stack_frame_type * _make_new_stack_frame(size_t elements_amount, stack_frame_type *prev_stack_frame) {
 	stack_frame_type *new_stack_frame = (stack_frame_type *) malloc(sizeof (stack_frame_type) + sizeof (stack_element_type) * elements_amount);
 	if (!new_stack_frame) {
 		puts("Not enough place to allocate a stack frame!");
@@ -51,9 +51,6 @@ void check_if_there_is_something_to_pop(vm_type *vm, const char *error_message) 
 
 
 const char NOTHING_TO_POP[] = "Nothing to pop";
-
-
-#define pop_without_check(vm) *(vm->stack_info.current_element_ptr--)
 
 
 stack_element_type pop(vm_type *vm) {
