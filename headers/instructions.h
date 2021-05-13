@@ -1,4 +1,4 @@
-#include "../types/vm.c"
+#include "../types/vm.h"
 
 instructions_array_type * make_instructions_array(instruction_type *given_array, size_t length);
 

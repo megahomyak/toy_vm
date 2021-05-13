@@ -1,8 +1,8 @@
 #ifndef VM_TYPE_FILE_INCLUDED
 #define VM_TYPE_FILE_INCLUDED
 
-#include "registers_frame.c"
-#include "stack_frame.c"
+#include "registers_frame.h"
+#include "stack_frame.h"
 
 
 typedef struct {

@@ -1,4 +1,4 @@
-#include "../types/vm.c"
+#include "../types/vm.h"
 
 void add_new_stack_frame_to_the_vm(vm_type *vm);
 

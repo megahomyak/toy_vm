@@ -1,4 +1,4 @@
-#include "instructions_array.c"
+#include "instructions_array.h"
 
 
 typedef int register_type;
