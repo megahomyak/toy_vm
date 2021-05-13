@@ -1,4 +1,4 @@
-#include "../types/vm.c"
+#include "../types/vm.h"
 
 registers_frame_type * make_new_registers_frame(registers_frame_type *prev_registers_frame, size_t registers_amount, instruction_type *return_address);
 
