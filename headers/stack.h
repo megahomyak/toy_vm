@@ -1,9 +1,11 @@
 #include "../types/vm.h"
 
 
-void add_new_stack_frame_to_the_vm(vm_type *vm);
+void add_new_stack_frame_to_the_vm_with_pointer(vm_type *vm, stack_frame_type *stack_frame_to_add_to);
 
-void add_first_stack_frame_to_the_vm(vm_type *vm);
+#define add_new_stack_frame_to_the_vm(vm) add_new_stack_frame_to_the_vm_with_pointer(vm, vm->stack_info.current_stack_frame)
+
+#define add_first_stack_frame_to_the_vm(vm) add_new_stack_frame_to_the_vm_with_pointer(vm, NULL)
 
 void remove_stack_frame_from_the_vm(vm_type *vm);
 

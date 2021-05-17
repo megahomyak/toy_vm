@@ -5,7 +5,7 @@
 #include "../cool_stuff/new_macro.h"
 
 
-stack_frame_type * _make_new_stack_frame(size_t elements_amount, stack_frame_type *prev_stack_frame) {
+stack_frame_type * make_new_stack_frame(size_t elements_amount, stack_frame_type *prev_stack_frame) {
 	stack_frame_type *new_stack_frame = big_new (stack_frame_type, stack_element_type, elements_amount);
 	if (!new_stack_frame) {
 		puts("Not enough place to allocate a stack frame!");
@@ -17,15 +17,8 @@ stack_frame_type * _make_new_stack_frame(size_t elements_amount, stack_frame_typ
 }
 
 
-void add_new_stack_frame_to_the_vm(vm_type *vm) {
-	stack_frame_type *stack_frame = _make_new_stack_frame(vm->stack_info.stack_frame_size, vm->stack_info.current_stack_frame);
-	vm->stack_info.current_stack_frame = stack_frame;
-	vm->stack_info.current_element_ptr = stack_frame->contents - 1;
-}
-
-
-void add_first_stack_frame_to_the_vm(vm_type *vm) {
-	stack_frame_type *stack_frame = _make_new_stack_frame(vm->stack_info.stack_frame_size, NULL);
+void add_new_stack_frame_to_the_vm_with_pointer(vm_type *vm, stack_frame_type *stack_frame_to_add_to) {
+	stack_frame_type *stack_frame = make_new_stack_frame(vm->stack_info.stack_frame_size, stack_frame_to_add_to);
 	vm->stack_info.current_stack_frame = stack_frame;
 	vm->stack_info.current_element_ptr = stack_frame->contents - 1;
 }
