@@ -1,6 +1,7 @@
 #ifndef VM_TYPE_FILE_INCLUDED
 #define VM_TYPE_FILE_INCLUDED
 
+
 #include "registers_frame.h"
 #include "stack_frame.h"
 

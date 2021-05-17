@@ -1,5 +1,6 @@
 #include "../types/vm.h"
 
+
 void add_new_stack_frame_to_the_vm(vm_type *vm);
 
 void add_first_stack_frame_to_the_vm(vm_type *vm);
