@@ -5,6 +5,7 @@
 #include "headers/registers.h"
 #include "headers/instructions.h"
 #include "headers/stack.h"
+#include "cool_stuff/new_macro.h"
 
 
 #define VM_DEBUG
@@ -18,7 +19,7 @@
 
 
 vm_type * make_vm(size_t stack_frame_size, size_t first_registers_frame_size, instructions_array_type *instructions_array) {
-	vm_type *vm = (vm_type *) malloc(sizeof (vm_type));
+	vm_type *vm = new (vm_type);
 	if (!vm) {
 		puts("Not enough place to allocate a vm!");
 		exit(1);

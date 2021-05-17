@@ -2,10 +2,11 @@
 #include <stdlib.h>
 
 #include "../headers/instructions.h"
+#include "../cool_stuff/new_macro.h"
 
 
 instructions_array_type * make_instructions_array(instruction_type *given_array, size_t length) {
-	instructions_array_type *instructions_array = (instructions_array_type *) malloc(sizeof (instructions_array_type) + sizeof (instruction_type) * length);
+	instructions_array_type *instructions_array = big_new (instructions_array_type, instruction_type, length);
 	if (!instructions_array) {
 		puts("Not enough place to allocate an instructions array!");
 		exit(1);

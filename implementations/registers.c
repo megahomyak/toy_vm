@@ -2,10 +2,11 @@
 #include <stdio.h>
 
 #include "../headers/registers.h"
+#include "../cool_stuff/new_macro.h"
 
 
 registers_frame_type * make_new_registers_frame(registers_frame_type *prev_registers_frame, size_t registers_amount, instruction_type *return_address) {
-	registers_frame_type *new_registers_frame = (registers_frame_type *) malloc(sizeof (registers_frame_type) + sizeof (register_type) * registers_amount);
+	registers_frame_type *new_registers_frame = big_new (registers_frame_type, register_type, registers_amount);
 	if (!new_registers_frame) {
 		puts("Not enough place to allocate a registers frame!");
 		exit(1);
