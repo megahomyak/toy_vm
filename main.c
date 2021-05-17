@@ -207,10 +207,17 @@ void process_next_instruction(vm_type *vm) {
 			}
 			break;
 		vm_case (SAVE)
-			save_to_register(vm, pop(vm), pop(vm));
+			save_to_register(
+				vm,
+				abs(pop(vm)),  // Register index
+				pop(vm)  // Value
+			);
 			break;
 		vm_case (LOAD)
-			push(vm, load_from_register(vm, pop(vm)));
+			push(vm, load_from_register(
+				vm,
+				pop(vm)  // Register index
+			));
 			break;
 		vm_case (CALL)
 			vm->current_registers_frame = make_new_registers_frame(

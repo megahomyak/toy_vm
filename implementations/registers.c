@@ -34,14 +34,12 @@ void check_if_index_is_within_the_bounds_of_registers_array(vm_type *vm, size_t 
 
 
 void save_to_register(vm_type *vm, size_t register_index, register_type value) {
-	register_index = abs(register_index);
 	check_if_index_is_within_the_bounds_of_registers_array(vm, register_index);
 	vm->current_registers_frame->contents[register_index] = value;
 }
 
 
 register_type load_from_register(vm_type *vm, size_t register_index) {
-	register_index = abs(register_index);
 	check_if_index_is_within_the_bounds_of_registers_array(vm, register_index);
 	return vm->current_registers_frame->contents[register_index];
 }
